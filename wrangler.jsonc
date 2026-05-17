@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "myleslane-portfolio",
+  "compatibility_date": "2025-05-17",
+  "assets": {
+    "directory": "./dist"
+  }
+}
