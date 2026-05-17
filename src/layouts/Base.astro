@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+}
+
+const {
+  title = "Myles Lane — Product Designer",
+  description = "Product Designer at Goldman Sachs focused on making complex tools feel simple.",
+  bodyClass = "",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myleslane.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class={`min-h-dvh ${bodyClass}`}>
+    <div class="mx-auto max-w-3xl px-6 py-12 sm:py-16">
+      <header class="flex items-center justify-between text-sm">
+        <a href="/" class="font-medium tracking-tight">Myles Lane</a>
+        <nav class="flex items-center gap-6 text-[var(--color-ink-muted)]">
+          <a href="/#work" class="hover:text-current">Work</a>
+          <a href="/about" class="hover:text-current">About</a>
+          <a href="mailto:myleslane00@gmail.com" class="hover:text-current">Email</a>
+        </nav>
+      </header>
+      <main class="mt-16 sm:mt-24">
+        <slot />
+      </main>
+      <footer class="mt-24 border-t border-current/10 pt-8 text-sm opacity-70">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <span>© {new Date().getFullYear()} Myles Lane</span>
+          <div class="flex gap-6">
+            <a href="https://www.linkedin.com/in/myleslane00/" class="hover:opacity-100">LinkedIn</a>
+            <a href="mailto:myleslane00@gmail.com" class="hover:opacity-100">Email</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

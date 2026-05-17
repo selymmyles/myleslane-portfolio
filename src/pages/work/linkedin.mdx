@@ -1,0 +1,83 @@
+---
+layout: ../../layouts/CaseStudy.astro
+title: Rethinking LinkedIn's filtering system
+tagline: User-centric filtering with tagging, customizable categories, and space management.
+role: UX & UI Designer
+year: 2024
+timeline: 1 month
+tools: Figma
+hero: /case-studies/linkedin/02.png
+heroAlt: Three LinkedIn redesign mockups — filter sidebar, profile card, and messaging modal
+---
+
+import Video from '../../components/Video.astro';
+
+## Project overview
+
+LinkedIn is the go-to platform for networking with professionals and businesses, but I've spent significant time manually transferring information from LinkedIn's connection pages to my Notion dashboard because LinkedIn lacks key features for seamless networking. By introducing a personalized category and tagging system with more customizability, LinkedIn could significantly improve user experience, keep professionals on the platform longer, and make networking more efficient.
+
+> Filter · Tag · Customize
+
+## The problems
+
+### Limited message functionality
+
+Without group messaging or bulk sending, users have to message contacts one at a time. A streamlined modal would make networking and outreach far more efficient.
+
+### Disorganized contact management
+
+Without personalized categories and collapsible sections, users struggle to efficiently group and retrieve important connections. A more structured system enhances accessibility and workflow.
+
+### Little customization
+
+A rigid category system limits user customization, making it difficult to tailor filtering options to specific needs. Allowing more flexibility in category creation and management would let users streamline their workflow, enhance organization, and rely on a system that adapts to their unique preferences.
+
+## The solutions
+
+### Filter rehaul
+
+I redesigned the LinkedIn Connections filter bar with collapsible categories to keep the workspace organized and a search bar for quick access to filters and tags. The "Add New Filter" section lets users create custom filters with specific tags that can be easily removed by hovering, giving users more control over their workflow.
+
+<Video src="/case-studies/linkedin/solution-filter.mp4" alt="Demo of the redesigned LinkedIn filter sidebar with collapsible categories and Add New Filter flow" />
+
+### Profile tags
+
+I built a tagging system that integrates with the filter sidebar, making it easier to organize and categorize connections. Clicking the "Tags" button on a profile card opens a modal showing all associated tags, with a search bar to quickly find, add, or remove them.
+
+<Video src="/case-studies/linkedin/solution-tags.mp4" alt="Demo of the Profile Tags modal opening from a connection card and adding tags" />
+
+### Messaging modal
+
+I designed a new message modal that appears when users select checkboxes on profile cards, featuring a search bar and name tags at the top to display selected recipients, with an optional group naming field below. A toggle button switches between "Group Chat" (default) and "Bulk Message" — the latter removes the group name field to streamline sending individual messages.
+
+<Video src="/case-studies/linkedin/solution-messaging.mp4" alt="Demo of the new messaging modal showing selected recipients, group naming, and the Group Chat / Bulk Message toggle" />
+
+## Research
+
+### Lots of bumps in the road
+
+Initial research faced hurdles: limited secondary data and no direct LinkedIn competitors (the Xing account I made for comparison was quickly banned). The project pivoted to user interviews with five diverse LinkedIn users. This user-centered approach provided valuable insights and narrowed the project scope from an A/B test of two concepts to a focused redesign of the existing page.
+
+## Iterations
+
+### Designing for clarity over flash
+
+At first, I wanted to create something grand, fresh, and exciting yet true to the design system. I introduced a new component that looked the part but felt distinct. However, testing revealed that users struggled to connect it with other elements, making navigation harder. So I scaled back, aligning more closely with the existing design language — and the results were far better. This reinforced a key lesson: **style means nothing if it's not intuitive and accessible**.
+
+<figure>
+  <img src="/case-studies/linkedin/03.png" alt="Before and after comparison of the filter sidebar design — earlier flashier iteration on the left, refined LinkedIn-native version on the right" />
+</figure>
+
+## Takeaways
+
+### Simplicity leads to better design
+
+Simplicity is key. Initially I aimed for grand solutions, but through iterations I learned that small tweaks to existing designs are often more effective. Familiar elements create a smoother, more intuitive user experience.
+
+### Prioritize usability over flashy features
+
+Prioritizing simplicity over complexity improves usability. Flashy interactions may be tempting, but clear and intuitive designs ensure users can navigate and engage with a redesigned product effortlessly.
+
+### Scale your project based on user needs
+
+Define your project's scale early based on user data, not assumptions. I initially planned a large-scale A/B test but realized through research that it was too ambitious. Aligning scope with real user needs ensures focused, effective efforts.

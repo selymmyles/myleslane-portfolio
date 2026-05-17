@@ -1,0 +1,36 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+  caption?: string;
+}
+
+const { src, alt, caption } = Astro.props;
+---
+
+<figure class="cs-video">
+  <video
+    src={src}
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-label={alt}
+  ></video>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .cs-video {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .cs-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+</style>

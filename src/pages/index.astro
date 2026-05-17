@@ -1,0 +1,114 @@
+---
+import Base from "../layouts/Base.astro";
+import { experience } from "../data/experience";
+import { work } from "../data/work";
+---
+
+<Base>
+  <section class="space-y-5">
+    <h1 class="text-3xl font-medium leading-snug tracking-tight sm:text-4xl">
+      Hi, I'm Myles.<br />
+      I'm a Product Designer at Goldman Sachs focused on making complex tools feel simple.
+    </h1>
+    <p class="text-base text-[var(--color-ink-muted)]">
+      Enterprise UX · Design Systems · AI Product Design
+    </p>
+  </section>
+
+  <section id="work" class="mt-20 sm:mt-24">
+    <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
+      Selected work
+    </h2>
+    <ul class="mt-6 divide-y divide-[var(--color-rule)] border-y border-[var(--color-rule)]">
+      {work.map((item) => (
+        <li class="py-5">
+          {item.status === "live" && item.href ? (
+            <a href={item.href} class="group flex items-baseline justify-between gap-6 no-underline">
+              <div class="min-w-0">
+                <p class="text-lg font-medium tracking-tight group-hover:underline">{item.title}</p>
+                <p class="mt-1 text-sm text-[var(--color-ink-muted)]">{item.blurb}</p>
+                <p class="mt-1 text-xs uppercase tracking-wider text-[var(--color-ink-subtle)]">{item.role}</p>
+              </div>
+              <span class="shrink-0 text-sm text-[var(--color-ink-subtle)]">{item.year}</span>
+            </a>
+          ) : (
+            <div class="flex items-baseline justify-between gap-6">
+              <div class="min-w-0">
+                <p class="text-lg font-medium tracking-tight text-[var(--color-ink-muted)]">
+                  {item.title}
+                  <span class="ml-2 align-middle text-xs font-normal uppercase tracking-wider text-[var(--color-ink-subtle)]">
+                    Case study in progress
+                  </span>
+                </p>
+                <p class="mt-1 text-sm text-[var(--color-ink-muted)]">{item.blurb}</p>
+                <p class="mt-1 text-xs uppercase tracking-wider text-[var(--color-ink-subtle)]">{item.role}</p>
+              </div>
+              <span class="shrink-0 text-sm text-[var(--color-ink-subtle)]">{item.year}</span>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="experience" class="mt-20 sm:mt-24">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
+        Experience
+      </h2>
+      <a
+        href="/resume.pdf"
+        class="text-xs uppercase tracking-[0.18em] text-[var(--color-ink-muted)] underline underline-offset-4 hover:text-[var(--color-ink)]"
+        target="_blank"
+        rel="noopener"
+      >
+        Download résumé ↓
+      </a>
+    </div>
+    <ol class="mt-6 space-y-10">
+      {experience.map((entry) => (
+        <li>
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <p class="text-lg font-medium tracking-tight">{entry.company}</p>
+            <p class="text-sm text-[var(--color-ink-subtle)]">{entry.dates}</p>
+          </div>
+          <p class="mt-1 text-sm text-[var(--color-ink-muted)]">
+            {entry.title} · {entry.location}
+          </p>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-[var(--color-ink-muted)] marker:text-[var(--color-ink-subtle)]">
+            {entry.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section id="about" class="mt-20 sm:mt-24">
+    <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
+      About
+    </h2>
+    <p class="mt-6 text-base leading-relaxed">
+      I'm a Product Designer at Goldman Sachs on the Human Capital Management team, designing
+      internal tools on the firm's enterprise design system. Outside of GS I shipped a 0-to-1 CRM
+      for Tiberon Systems and the UI for Pixel Arena, the 1st-place winner at the DSCVR Buildathon.
+      Right now I'm focused on AI product design.
+    </p>
+    <p class="mt-5">
+      <a href="/about" class="text-sm text-[var(--color-ink)] underline">More about me →</a>
+    </p>
+  </section>
+
+  <section id="contact" class="mt-20 sm:mt-24">
+    <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
+      Get in touch
+    </h2>
+    <p class="mt-6 text-base text-[var(--color-ink-muted)]">
+      Best way to reach me is{" "}
+      <a href="mailto:myleslane00@gmail.com" class="text-[var(--color-ink)] underline">email</a>
+      {" "}or{" "}
+      <a href="https://www.linkedin.com/in/myleslane00/" class="text-[var(--color-ink)] underline">LinkedIn</a>.
+    </p>
+  </section>
+</Base>
