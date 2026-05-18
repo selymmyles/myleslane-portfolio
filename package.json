@@ -1,0 +1,7 @@
+{
+  "name": "myleslane-portfolio-frozen-snapshot",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp index.html about-me.html bondit-case-study.html linkedin-case-study.html dist/"
+  }
+}
