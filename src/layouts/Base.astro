@@ -1,16 +1,19 @@
 ---
 import "../styles/global.css";
+import Marquee from "../components/Marquee.astro";
 
 interface Props {
   title?: string;
   description?: string;
   bodyClass?: string;
+  marquee?: boolean;
 }
 
 const {
   title = "Myles Lane — Product Designer",
   description = "Product Designer at Goldman Sachs focused on making complex tools feel simple.",
   bodyClass = "",
+  marquee = false,
 } = Astro.props;
 ---
 
@@ -25,27 +28,34 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://myleslane.com" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&display=swap"
+    />
     <title>{title}</title>
   </head>
   <body class={`min-h-dvh ${bodyClass}`}>
+    {marquee && <Marquee />}
     <div class="mx-auto max-w-3xl px-6 py-12 sm:py-16">
       <header class="flex items-center justify-between text-sm">
-        <a href="/" class="font-medium tracking-tight">Myles Lane</a>
-        <nav class="flex items-center gap-6 text-[var(--color-ink-muted)]">
-          <a href="/#work" class="hover:text-current">Work</a>
-          <a href="/about" class="hover:text-current">About</a>
-          <a href="mailto:myleslane00@gmail.com" class="hover:text-current">Email</a>
+        <a href="/" class="font-medium tracking-tight no-underline">Myles Lane</a>
+        <nav class="flex items-center gap-6 text-[var(--color-navy-muted)]">
+          <a href="/#work" class="no-underline">Work</a>
+          <a href="/about" class="no-underline">About</a>
+          <a href="mailto:myleslane00@gmail.com" class="no-underline">Email</a>
         </nav>
       </header>
       <main class="mt-16 sm:mt-24">
         <slot />
       </main>
-      <footer class="mt-24 border-t border-current/10 pt-8 text-sm opacity-70">
+      <footer class="mt-32 border-t border-[var(--color-navy-rule)] pt-8 text-sm">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <span>© {new Date().getFullYear()} Myles Lane</span>
+          <span class="text-[var(--color-navy-muted)]">© {new Date().getFullYear()} Myles Lane</span>
           <div class="flex gap-6">
-            <a href="https://www.linkedin.com/in/myleslane00/" class="hover:opacity-100">LinkedIn</a>
-            <a href="mailto:myleslane00@gmail.com" class="hover:opacity-100">Email</a>
+            <a href="https://www.linkedin.com/in/myleslane00/" class="no-underline">LinkedIn</a>
+            <a href="mailto:myleslane00@gmail.com" class="no-underline">Email</a>
           </div>
         </div>
       </footer>

@@ -2,48 +2,74 @@
 import Base from "../layouts/Base.astro";
 import { experience } from "../data/experience";
 import { work } from "../data/work";
+
+const workImages: Record<string, string> = {
+  bondit: "/site-assets/images/WJ1OMoou3Aj441a4BFlrHpVar4M.png",
+  linkedin: "/site-assets/images/u88vSVQyrVDE8KxXYC8GzT46HU.png",
+};
 ---
 
-<Base>
-  <section class="space-y-5">
-    <h1 class="text-3xl font-medium leading-snug tracking-tight sm:text-4xl">
+<Base marquee={true}>
+  <section class="space-y-6">
+    <p class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-navy-subtle)]">
+      Product Designer · Goldman Sachs
+    </p>
+    <h1 class="text-4xl font-medium leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem]">
       Hi, I'm Myles.<br />
-      I'm a Product Designer at Goldman Sachs focused on making complex tools feel simple.
+      I design tools that make complex work feel simple.
     </h1>
-    <p class="text-base text-[var(--color-ink-muted)]">
-      Enterprise UX · Design Systems · AI Product Design
+    <p class="max-w-xl text-base text-[var(--color-navy-muted)] sm:text-lg">
+      Based in Dallas. Currently focused on enterprise UX, design systems, and AI product design.
     </p>
   </section>
 
-  <section id="work" class="mt-20 sm:mt-24">
-    <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
-      Selected work
+  <figure class="mt-16 sm:mt-20">
+    <img
+      src="/site-assets/images/SdHCQK8xg4nfGfsmpL8xSARysDE.png"
+      alt="A duotone self-portrait illustration of Myles, drawn in navy and sage"
+      class="block w-full max-w-md"
+      loading="eager"
+    />
+  </figure>
+
+  <section id="work" class="mt-32 sm:mt-40">
+    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+      What I make.
     </h2>
-    <ul class="mt-6 divide-y divide-[var(--color-rule)] border-y border-[var(--color-rule)]">
+    <ul class="mt-12 space-y-20 sm:space-y-24">
       {work.map((item) => (
-        <li class="py-5">
+        <li>
           {item.status === "live" && item.href ? (
-            <a href={item.href} class="group flex items-baseline justify-between gap-6 no-underline">
-              <div class="min-w-0">
-                <p class="text-lg font-medium tracking-tight group-hover:underline">{item.title}</p>
-                <p class="mt-1 text-sm text-[var(--color-ink-muted)]">{item.blurb}</p>
-                <p class="mt-1 text-xs uppercase tracking-wider text-[var(--color-ink-subtle)]">{item.role}</p>
+            <a href={item.href} class="group block no-underline">
+              {workImages[item.slug] && (
+                <div class="overflow-hidden rounded-2xl bg-[var(--color-paper)] p-6 sm:p-10">
+                  <img
+                    src={workImages[item.slug]}
+                    alt={`${item.title} preview`}
+                    class="mx-auto block w-full max-w-2xl"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="mt-6 flex flex-wrap items-baseline justify-between gap-3">
+                <h3 class="text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--color-accent)] sm:text-3xl">
+                  {item.title}
+                </h3>
+                <span class="text-sm uppercase tracking-[0.14em] text-[var(--color-navy-subtle)]">{item.year}</span>
               </div>
-              <span class="shrink-0 text-sm text-[var(--color-ink-subtle)]">{item.year}</span>
+              <p class="mt-2 max-w-2xl text-base text-[var(--color-navy-muted)] sm:text-lg">{item.blurb}</p>
+              <p class="mt-3 text-xs uppercase tracking-[0.18em] text-[var(--color-navy-subtle)]">{item.role}</p>
             </a>
           ) : (
-            <div class="flex items-baseline justify-between gap-6">
-              <div class="min-w-0">
-                <p class="text-lg font-medium tracking-tight text-[var(--color-ink-muted)]">
-                  {item.title}
-                  <span class="ml-2 align-middle text-xs font-normal uppercase tracking-wider text-[var(--color-ink-subtle)]">
-                    Case study in progress
-                  </span>
-                </p>
-                <p class="mt-1 text-sm text-[var(--color-ink-muted)]">{item.blurb}</p>
-                <p class="mt-1 text-xs uppercase tracking-wider text-[var(--color-ink-subtle)]">{item.role}</p>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+                <h3 class="text-2xl font-semibold tracking-tight text-[var(--color-navy-muted)] sm:text-3xl">{item.title}</h3>
+                <span class="inline-flex items-center rounded-full bg-[var(--color-sage)] px-3 py-0.5 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-navy)]">
+                  Coming soon
+                </span>
               </div>
-              <span class="shrink-0 text-sm text-[var(--color-ink-subtle)]">{item.year}</span>
+              <p class="mt-2 max-w-2xl text-base text-[var(--color-navy-muted)] sm:text-lg">{item.blurb}</p>
+              <p class="mt-3 text-xs uppercase tracking-[0.18em] text-[var(--color-navy-subtle)]">{item.role} · {item.year}</p>
             </div>
           )}
         </li>
@@ -51,31 +77,31 @@ import { work } from "../data/work";
     </ul>
   </section>
 
-  <section id="experience" class="mt-20 sm:mt-24">
-    <div class="flex items-baseline justify-between gap-4">
-      <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
-        Experience
+  <section id="experience" class="mt-32 sm:mt-40">
+    <div class="flex flex-wrap items-baseline justify-between gap-4">
+      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+        Where I've been.
       </h2>
       <a
         href="/resume.pdf"
-        class="text-xs uppercase tracking-[0.18em] text-[var(--color-ink-muted)] underline underline-offset-4 hover:text-[var(--color-ink)]"
+        class="text-xs uppercase tracking-[0.18em] text-[var(--color-navy-muted)] underline underline-offset-4"
         target="_blank"
         rel="noopener"
       >
         Download résumé ↓
       </a>
     </div>
-    <ol class="mt-6 space-y-10">
+    <ol class="mt-12 space-y-12">
       {experience.map((entry) => (
         <li>
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <p class="text-lg font-medium tracking-tight">{entry.company}</p>
-            <p class="text-sm text-[var(--color-ink-subtle)]">{entry.dates}</p>
+            <p class="text-xl font-semibold tracking-tight">{entry.company}</p>
+            <p class="text-sm text-[var(--color-navy-subtle)]">{entry.dates}</p>
           </div>
-          <p class="mt-1 text-sm text-[var(--color-ink-muted)]">
+          <p class="mt-1 text-sm text-[var(--color-navy-muted)]">
             {entry.title} · {entry.location}
           </p>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-[var(--color-ink-muted)] marker:text-[var(--color-ink-subtle)]">
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-[var(--color-navy-muted)] marker:text-[var(--color-navy-subtle)]">
             {entry.bullets.map((bullet) => (
               <li>{bullet}</li>
             ))}
@@ -85,30 +111,30 @@ import { work } from "../data/work";
     </ol>
   </section>
 
-  <section id="about" class="mt-20 sm:mt-24">
-    <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
-      About
+  <section id="about" class="mt-32 sm:mt-40">
+    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+      Who I am.
     </h2>
-    <p class="mt-6 text-base leading-relaxed">
+    <p class="mt-8 max-w-2xl text-lg leading-relaxed">
       I'm a Product Designer at Goldman Sachs on the Human Capital Management team, designing
       internal tools on the firm's enterprise design system. Outside of GS I shipped a 0-to-1 CRM
       for Tiberon Systems and the UI for Pixel Arena, the 1st-place winner at the DSCVR Buildathon.
       Right now I'm focused on AI product design.
     </p>
-    <p class="mt-5">
-      <a href="/about" class="text-sm text-[var(--color-ink)] underline">More about me →</a>
+    <p class="mt-6">
+      <a href="/about" class="text-base underline decoration-1 underline-offset-4">More about me →</a>
     </p>
   </section>
 
-  <section id="contact" class="mt-20 sm:mt-24">
-    <h2 class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-ink-subtle)]">
-      Get in touch
+  <section id="contact" class="mt-32 sm:mt-40">
+    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+      Get in touch.
     </h2>
-    <p class="mt-6 text-base text-[var(--color-ink-muted)]">
+    <p class="mt-8 max-w-2xl text-lg text-[var(--color-navy-muted)]">
       Best way to reach me is{" "}
-      <a href="mailto:myleslane00@gmail.com" class="text-[var(--color-ink)] underline">email</a>
+      <a href="mailto:myleslane00@gmail.com" class="underline decoration-1 underline-offset-4">email</a>
       {" "}or{" "}
-      <a href="https://www.linkedin.com/in/myleslane00/" class="text-[var(--color-ink)] underline">LinkedIn</a>.
+      <a href="https://www.linkedin.com/in/myleslane00/" class="underline decoration-1 underline-offset-4">LinkedIn</a>.
     </p>
   </section>
 </Base>

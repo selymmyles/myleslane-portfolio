@@ -1,0 +1,73 @@
+---
+const phrases = [
+  "Hallo, ich bin Myles",
+  "こんにちは、Mylesです",
+  "안녕, 나는 Myles야",
+  "Labas, aš esu Myles",
+];
+const items = [...phrases, ...phrases];
+---
+
+<aside aria-label="Multilingual greeting" class="marquee">
+  <div class="marquee-track">
+    {items.map((phrase) => (
+      <span class="marquee-item">
+        <span class="phrase">{phrase}</span>
+        <img
+          src="/site-assets/images/PTGq8OdfoHKSmMQmm660Wj2Fkk.png"
+          alt=""
+          aria-hidden="true"
+          class="dot"
+          loading="eager"
+          decoding="async"
+        />
+      </span>
+    ))}
+  </div>
+</aside>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    background-color: var(--color-cream);
+    border-bottom: 1px solid var(--color-navy-rule);
+    padding-block: 0.75rem;
+  }
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    white-space: nowrap;
+    width: max-content;
+    animation: marquee-scroll 50s linear infinite;
+  }
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--color-navy);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+  .dot {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>

@@ -1,18 +1,32 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&display=swap");
 
 @theme {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Albert Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: "Albert Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-ink: #111111;
-  --color-ink-muted: #4a4a4a;
-  --color-ink-subtle: #8a8a8a;
-  --color-paper: #fafaf8;
-  --color-rule: #e6e4df;
-  --color-accent: #111111;
+  /* Site identity — locked 2026-05-19 Design Direction */
+  --color-navy: #2a3a60;
+  --color-navy-alt: #2d3d69;
+  --color-accent: #0099ff;
+  --color-cream: #ffffea;
+  --color-sage: #deddb4;
 
-  /* Case study tokens (Bondit + shared) */
+  /* Navy-tinted neutrals (text on cream) */
+  --color-navy-muted: rgb(42 58 96 / 0.72);
+  --color-navy-subtle: rgb(42 58 96 / 0.5);
+  --color-navy-rule: rgb(42 58 96 / 0.14);
+
+  /* System utilities — use rarely; prefer navy/cream */
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+
+  /* Backwards-compat aliases for Phase A pages.
+     Removed once index.astro and about.astro migrate to canonical tokens. */
+  --color-ink-muted: var(--color-navy-muted);
+  --color-ink-subtle: var(--color-navy-subtle);
+  --color-rule: var(--color-navy-rule);
+
+  /* Case study tokens (Bondit + LinkedIn) — scoped to brand contexts, do not touch */
   --color-ivory: #FFF9F2;
   --color-bondit-ink: #1E1E1E;
   --color-bondit-teal: #5B9797;
@@ -23,9 +37,9 @@
 }
 
 html {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+  font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -39,14 +53,19 @@ a {
   color: inherit;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+  transition: color 200ms ease-out;
+}
+
+a:hover {
+  color: var(--color-accent);
 }
 
 ::selection {
-  background-color: var(--color-ink);
-  color: var(--color-paper);
+  background-color: var(--color-navy);
+  color: var(--color-cream);
 }
 
-/* Case study pages */
+/* Case study pages — keep ivory background, scoped tokens */
 body.theme-case-study {
   background-color: var(--color-ivory);
   color: var(--color-bondit-ink);
@@ -55,4 +74,9 @@ body.theme-case-study {
 
 body.theme-case-study a {
   color: inherit;
+}
+
+body.theme-case-study a:hover {
+  color: inherit;
+  opacity: 0.7;
 }
