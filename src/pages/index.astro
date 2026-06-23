@@ -1,140 +1,503 @@
 ---
 import Base from "../layouts/Base.astro";
-import { experience } from "../data/experience";
-import { work } from "../data/work";
 
-const workImages: Record<string, string> = {
-  bondit: "/site-assets/images/WJ1OMoou3Aj441a4BFlrHpVar4M.png",
-  linkedin: "/site-assets/images/u88vSVQyrVDE8KxXYC8GzT46HU.png",
-};
+const work = [
+  {
+    href: "/work/bondit",
+    title: "Bondit",
+    category: "App Design",
+    blurb:
+      "Leveraging real-life relationships to make habit tracking a fun, social experience.",
+    tags: "UX Research · User Testing · UI Design",
+    img: "/site-assets/images/bondit-mockup.png",
+    tile: "radial-gradient(130% 90% at 50% -10%, var(--color-accent-warm), var(--color-accent))",
+    imgStyle: "width:370px;height:274px;top:12px;",
+    shadow: "drop-shadow(0 16px 24px rgba(23,36,63,.32))",
+  },
+  {
+    href: "/work/linkedin",
+    title: "User-centric filtering",
+    category: "Web Design · A UX Concept",
+    blurb:
+      "Reimagining LinkedIn’s connection filtering with tagging, customizable categories, and better space management.",
+    tags: "UX Design · Redesign",
+    img: "/site-assets/images/linkedin-mockup.png",
+    tile: "radial-gradient(130% 90% at 50% -10%, var(--color-navy-alt), var(--color-navy))",
+    imgStyle: "width:436px;height:260px;top:21px;",
+    shadow: "drop-shadow(0 16px 24px rgba(0,0,0,.34))",
+  },
+];
+
+const experience = [
+  { company: "Goldman Sachs", role: "Product Designer · Human Capital Management", dates: "Aug 2025 — Now" },
+  { company: "Tiberon Systems", role: "Product Designer · Contract", dates: "Feb — May 2025" },
+  { company: "DSCVR Buildathon", role: "Product Designer · Contract · 1st place", dates: "Sep — Oct 2024" },
+];
+
+const education = [
+  { school: "Mento Design Academy", detail: "UX Design Bootcamp", dates: "2024 — 2025" },
+  { school: "Savannah College of Art & Design", detail: "BFA, Animation — Story & Concept", dates: "2021 — 2024" },
+];
 ---
 
 <Base marquee={true}>
-  <section class="space-y-6">
-    <p class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-navy-subtle)]">
-      Product Designer · Goldman Sachs
-    </p>
-    <h1 class="text-4xl font-medium leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem]">
-      Hi, I'm Myles.<br />
-      I design tools that make complex work feel simple.
-    </h1>
-    <p class="max-w-xl text-base text-[var(--color-navy-muted)] sm:text-lg">
-      Based in Dallas. Currently focused on enterprise UX, design systems, and AI product design.
-    </p>
-  </section>
-
-  <figure class="mt-16 sm:mt-20">
-    <img
-      src="/site-assets/images/SdHCQK8xg4nfGfsmpL8xSARysDE.png"
-      alt="A duotone self-portrait illustration of Myles, drawn in navy and sage"
-      class="block w-full max-w-md"
-      loading="eager"
-    />
-  </figure>
-
-  <section id="work" class="mt-32 sm:mt-40">
-    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-      What I make.
-    </h2>
-    <ul class="mt-12 space-y-20 sm:space-y-24">
-      {work.map((item) => (
-        <li>
-          {item.status === "live" && item.href ? (
-            <a href={item.href} class="group block no-underline">
-              {workImages[item.slug] && (
-                <div class="overflow-hidden rounded-2xl bg-[var(--color-paper)] p-6 sm:p-10">
-                  <img
-                    src={workImages[item.slug]}
-                    alt={`${item.title} preview`}
-                    class="mx-auto block w-full max-w-2xl"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div class="mt-6 flex flex-wrap items-baseline justify-between gap-3">
-                <h3 class="text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--color-accent)] sm:text-3xl">
-                  {item.title}
-                </h3>
-                <span class="text-sm uppercase tracking-[0.14em] text-[var(--color-navy-subtle)]">{item.year}</span>
-              </div>
-              <p class="mt-2 max-w-2xl text-base text-[var(--color-navy-muted)] sm:text-lg">{item.blurb}</p>
-              <p class="mt-3 text-xs uppercase tracking-[0.18em] text-[var(--color-navy-subtle)]">{item.role}</p>
-            </a>
-          ) : (
-            <div>
-              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                <h3 class="text-2xl font-semibold tracking-tight text-[var(--color-navy-muted)] sm:text-3xl">{item.title}</h3>
-                <span class="inline-flex items-center rounded-full bg-[var(--color-sage)] px-3 py-0.5 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-navy)]">
-                  Coming soon
-                </span>
-              </div>
-              <p class="mt-2 max-w-2xl text-base text-[var(--color-navy-muted)] sm:text-lg">{item.blurb}</p>
-              <p class="mt-3 text-xs uppercase tracking-[0.18em] text-[var(--color-navy-subtle)]">{item.role} · {item.year}</p>
-            </div>
-          )}
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <section id="experience" class="mt-32 sm:mt-40">
-    <div class="flex flex-wrap items-baseline justify-between gap-4">
-      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-        Where I've been.
-      </h2>
-      <a
-        href="/resume.pdf"
-        class="text-xs uppercase tracking-[0.18em] text-[var(--color-navy-muted)] underline underline-offset-4"
-        target="_blank"
-        rel="noopener"
-      >
-        Download résumé ↓
-      </a>
-    </div>
-    <ol class="mt-12 space-y-12">
-      {experience.map((entry) => (
-        <li>
-          <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <p class="text-xl font-semibold tracking-tight">{entry.company}</p>
-            <p class="text-sm text-[var(--color-navy-subtle)]">{entry.dates}</p>
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Product Designer · Dallas, TX</div>
+        <h1 class="hero-h1">Hi, I’m Myles — I make complex tools <span class="accent">feel simple.</span></h1>
+        <p class="hero-lede">
+          I’m a product designer building internal tools at Goldman Sachs. My skills focus on
+          enterprise UX, design systems, and AI-augmented workflows. I care about the small details
+          that make complex software feel human.
+        </p>
+        <div class="hero-actions">
+          <a href="mailto:myleslane00@gmail.com" class="btn-primary">Reach me here →</a>
+          <div class="availability">
+            <span class="dot"></span>Currently @ Goldman Sachs
           </div>
-          <p class="mt-1 text-sm text-[var(--color-navy-muted)]">
-            {entry.title} · {entry.location}
-          </p>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-[var(--color-navy-muted)] marker:text-[var(--color-navy-subtle)]">
-            {entry.bullets.map((bullet) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
-        </li>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-block"></div>
+        <div class="portrait-frame">
+          <img
+            src="/site-assets/images/marquee-smooth.gif"
+            alt="Animated illustrated portrait of Myles Lane"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" class="section section-divide">
+    <div class="eyebrow">(01) — Selected Work</div>
+    <h2 class="section-h2">Case studies</h2>
+    <div class="work-grid">
+      {work.map((item) => (
+        <a href={item.href} class="work-card">
+          <div class="work-card-head">
+            <div>
+              <div class="work-title">{item.title}</div>
+              <div class="work-cat">{item.category}</div>
+            </div>
+            <span class="work-arrow">↗</span>
+          </div>
+          <p class="work-blurb">{item.blurb}</p>
+          <div class="work-tags">{item.tags}</div>
+          <div class="work-tile" style={`background:${item.tile};`}>
+            <img src={item.img} alt={`${item.title} preview`} style={`${item.imgStyle}filter:${item.shadow};`} loading="lazy" />
+          </div>
+        </a>
       ))}
-    </ol>
+    </div>
   </section>
 
-  <section id="about" class="mt-32 sm:mt-40">
-    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-      Who I am.
-    </h2>
-    <p class="mt-8 max-w-2xl text-lg leading-relaxed">
-      I'm a Product Designer at Goldman Sachs on the Human Capital Management team, designing
-      internal tools on the firm's enterprise design system. Outside of GS I shipped a 0-to-1 CRM
-      for Tiberon Systems and the UI for Pixel Arena, the 1st-place winner at the DSCVR Buildathon.
-      Right now I'm focused on AI product design.
-    </p>
-    <p class="mt-6">
-      <a href="/about" class="text-base underline decoration-1 underline-offset-4">More about me →</a>
-    </p>
+  <!-- EXPERIENCE -->
+  <section class="section section-divide">
+    <div class="eyebrow">(02) — Experience</div>
+    <h2 class="section-h2">Where I’ve been</h2>
+
+    <div class="xp-row">
+      <div class="xp-label-col">
+        <div class="xp-label">Work</div>
+        <a href="/resume.pdf" target="_blank" rel="noopener" class="xp-resume">View full résumé ↗</a>
+      </div>
+      <div class="xp-list">
+        {experience.map((entry) => (
+          <div class="xp-item">
+            <div>
+              <div class="xp-name">{entry.company}</div>
+              <div class="xp-sub">{entry.role}</div>
+            </div>
+            <div class="xp-dates">{entry.dates}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="xp-row xp-row-edu">
+      <div class="xp-label">Education</div>
+      <div class="xp-list">
+        {education.map((entry) => (
+          <div class="xp-item">
+            <div>
+              <div class="xp-name">{entry.school}</div>
+              <div class="xp-sub">{entry.detail}</div>
+            </div>
+            <div class="xp-dates">{entry.dates}</div>
+          </div>
+        ))}
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="mt-32 sm:mt-40">
-    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-      Get in touch.
-    </h2>
-    <p class="mt-8 max-w-2xl text-lg text-[var(--color-navy-muted)]">
-      Best way to reach me is{" "}
-      <a href="mailto:myleslane00@gmail.com" class="underline decoration-1 underline-offset-4">email</a>
-      {" "}or{" "}
-      <a href="https://www.linkedin.com/in/myleslane00/" class="underline decoration-1 underline-offset-4">LinkedIn</a>.
-    </p>
+  <!-- ABOUT -->
+  <section id="about" class="section section-divide">
+    <div class="eyebrow">(03) — About</div>
+    <div class="about-grid">
+      <div>
+        <h2 class="section-h2">A little about me</h2>
+        <p class="about-p">
+          I’m a Houston-born, Dallas-based product designer with a lifelong love for making things.
+          My path ran from sketching portraits as a kid, to graphic design in high school, to
+          animation and digital art at SCAD — where I found UX and fell hard for crafting
+          user-centered experiences.
+        </p>
+        <p class="about-p">
+          Outside of work I’m a devoted movie person (always updating my Letterboxd) and I build
+          playlists to match just about any mood.
+        </p>
+        <div class="about-meta">
+          <div><div class="about-meta-k">Based in</div><div class="about-meta-v">Dallas, TX</div></div>
+          <div><div class="about-meta-k">Always</div><div class="about-meta-v">Movies &amp; playlists</div></div>
+          <div><div class="about-meta-k">Lately</div><div class="about-meta-v">AI product design</div></div>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-block portrait-block-sm"></div>
+        <div class="portrait-frame portrait-frame-sm">
+          <img
+            src="/site-assets/images/05-childhood-pirate-photo.jpg"
+            alt="Myles as a kid in a pirate hat"
+            style="object-position:50% 30%;"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
   </section>
 </Base>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 76px 0 84px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.18fr 0.82fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero .eyebrow {
+    margin-bottom: 22px;
+  }
+  .hero-h1 {
+    font-weight: 700;
+    font-size: clamp(40px, 5.2vw, 66px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 26px;
+  }
+  .accent {
+    color: var(--color-accent);
+  }
+  .hero-lede {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.62;
+    color: var(--color-navy-muted);
+    max-width: 48ch;
+    margin: 0 0 30px;
+  }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--color-navy);
+    color: var(--color-cream);
+    padding: 14px 24px;
+    border-radius: 11px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent);
+    color: var(--color-cream);
+  }
+  .availability {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--color-navy-soft);
+  }
+  .availability .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    display: inline-block;
+  }
+
+  /* PORTRAIT (hero + about) */
+  .portrait-wrap {
+    position: relative;
+  }
+  .portrait-block {
+    position: absolute;
+    inset: -16px -16px auto auto;
+    width: 100%;
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 20px;
+    z-index: 0;
+  }
+  .portrait-frame {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #eae6da;
+    border: 1px solid var(--color-navy);
+  }
+  .portrait-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .portrait-block-sm,
+  .portrait-frame-sm {
+    border-radius: 18px;
+  }
+  .portrait-frame-sm {
+    background: #ece7d6;
+    border-color: var(--color-navy-rule);
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 40px 0 84px;
+  }
+  .section-divide {
+    border-top: 1px solid var(--color-navy-rule);
+  }
+  .section-h2 {
+    font-weight: 600;
+    font-size: clamp(28px, 3.4vw, 40px);
+    letter-spacing: -0.02em;
+    margin: 0 0 36px;
+  }
+
+  /* WORK */
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .work-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-navy-rule);
+    border-radius: 18px;
+    padding: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(23, 36, 63, 0.13);
+    color: inherit;
+  }
+  .work-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .work-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+  }
+  .work-cat {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-navy-faint);
+    margin-top: 4px;
+  }
+  .work-arrow {
+    font-size: 22px;
+    color: var(--color-accent);
+  }
+  .work-blurb {
+    font-family: var(--font-body);
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--color-navy-muted);
+    margin: 0 0 18px;
+  }
+  .work-tags {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--color-navy-faint);
+    margin-bottom: 22px;
+  }
+  .work-tile {
+    margin: 22px -30px -30px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  .work-tile img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+  }
+
+  /* EXPERIENCE */
+  .xp-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .xp-row-edu {
+    margin-bottom: 0;
+  }
+  .xp-label-col {
+    padding-top: 18px;
+  }
+  .xp-label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-navy-subtle);
+  }
+  .xp-row-edu .xp-label {
+    padding-top: 18px;
+  }
+  .xp-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-accent);
+    border-bottom: 1px solid rgb(217 102 59 / 0.4);
+    padding-bottom: 2px;
+  }
+  .xp-resume:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+  .xp-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 18px 0;
+    border-top: 1px solid var(--color-navy-rule);
+  }
+  .xp-name {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .xp-sub {
+    color: var(--color-navy-soft);
+    font-size: 15px;
+    margin-top: 2px;
+  }
+  .xp-dates {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-navy-soft);
+    white-space: nowrap;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-p {
+    font-family: var(--font-body);
+    font-size: 17.5px;
+    line-height: 1.65;
+    color: var(--color-navy-strong);
+    margin: 0 0 18px;
+    max-width: 54ch;
+  }
+  .about-p:last-of-type {
+    margin-bottom: 0;
+  }
+  .about-meta {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+  }
+  .about-meta-k {
+    color: var(--color-navy-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+  }
+  .about-meta-v {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 820px) {
+    .hero-grid,
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .about-grid .portrait-wrap {
+      max-width: 360px;
+    }
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero {
+      padding: 48px 0 64px;
+    }
+    .section {
+      padding: 36px 0 64px;
+    }
+    .xp-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .xp-label-col {
+      padding-top: 0;
+    }
+  }
+</style>

@@ -1,27 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Albert Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Albert Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Three-font system — Claude Design direction (2026-06-23) */
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: var(--font-body);
 
-  /* Site identity — locked 2026-05-19 Design Direction */
-  --color-navy: #2a3a60;
-  --color-navy-alt: #2d3d69;
-  --color-accent: #0099ff;
-  --color-cream: #ffffea;
+  /* Site identity — Claude Design palette (2026-06-23, supersedes the 2026-05-19 blue direction) */
+  --color-navy: #17243F;
+  --color-navy-alt: #22345B;
+  --color-accent: #D9663B;
+  --color-accent-warm: #E78457;
+  --color-cream: #F2EEDF;
+  --color-card: #FAF7EC;
   --color-sage: #deddb4;
 
-  /* Navy-tinted neutrals (text on cream) */
-  --color-navy-muted: rgb(42 58 96 / 0.72);
-  --color-navy-subtle: rgb(42 58 96 / 0.5);
-  --color-navy-rule: rgb(42 58 96 / 0.14);
+  /* Navy-tinted neutrals (text on cream) — base rgb 23 36 63 = #17243F */
+  --color-navy-strong: rgb(23 36 63 / 0.78);
+  --color-navy-muted: rgb(23 36 63 / 0.72);
+  --color-navy-soft: rgb(23 36 63 / 0.6);
+  --color-navy-subtle: rgb(23 36 63 / 0.5);
+  --color-navy-faint: rgb(23 36 63 / 0.55);
+  --color-navy-rule: rgb(23 36 63 / 0.14);
 
   /* System utilities — use rarely; prefer navy/cream */
   --color-ink: #000000;
   --color-paper: #ffffff;
 
-  /* Backwards-compat aliases for Phase A pages.
-     Removed once index.astro and about.astro migrate to canonical tokens. */
+  /* Backwards-compat aliases for not-yet-migrated pages (About, case studies). */
   --color-ink-muted: var(--color-navy-muted);
   --color-ink-subtle: var(--color-navy-subtle);
   --color-rule: var(--color-navy-rule);
@@ -39,14 +46,19 @@
 html {
   background-color: var(--color-cream);
   color: var(--color-navy);
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 body {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.55;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
 }
 
 a {
@@ -61,15 +73,15 @@ a:hover {
 }
 
 ::selection {
-  background-color: var(--color-navy);
-  color: var(--color-cream);
+  background-color: var(--color-accent);
+  color: var(--color-card);
 }
 
-/* Case study pages — keep ivory background, scoped tokens */
+/* Legacy case-study theme (old shared CaseStudy.astro). Retained for safety. */
 body.theme-case-study {
   background-color: var(--color-ivory);
   color: var(--color-bondit-ink);
-  font-family: var(--font-display);
+  font-family: var(--font-body);
 }
 
 body.theme-case-study a {
@@ -79,4 +91,177 @@ body.theme-case-study a {
 body.theme-case-study a:hover {
   color: inherit;
   opacity: 0.7;
+}
+
+/* ── Case-study layout helpers (Claude Design case studies) ───────────────── */
+.cs-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.cs-divide {
+  border-top: 1px solid var(--color-navy-rule);
+}
+.cs-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+.cs-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 3.4vw, 40px);
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+.cs-h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cs-grid-overview {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 48px;
+}
+.cs-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.cs-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cs-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.cs-problem-2 {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+.cs-sol-head {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  align-items: end;
+}
+.cs-tile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 760px) {
+  .cs-grid-overview,
+  .cs-grid-2,
+  .cs-grid-3,
+  .cs-grid-4,
+  .cs-problem-2,
+  .cs-sol-head {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  /* Feature rows that place the image first on desktop: text first on mobile */
+  .cs-feature-rev .cs-feature-media {
+    order: 2;
+  }
+  .cs-feature-rev .cs-feature-copy {
+    order: 1;
+  }
+}
+@media (max-width: 600px) {
+  .cs-wrap {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+/* Shared case-study content primitives */
+.cs-meta-k {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-navy-subtle);
+  margin-bottom: 7px;
+}
+.cs-meta-v {
+  font-weight: 700;
+  font-size: 17px;
+}
+.cs-info-card {
+  background: var(--color-card);
+  border: 1px solid rgb(23 36 63 / 0.12);
+  border-radius: 16px;
+  padding: 26px;
+}
+.cs-info-p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--color-navy-muted);
+  margin: 0;
+}
+.cs-insight-n {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 30px;
+  color: rgb(23 36 63 / 0.18);
+  margin-bottom: 12px;
+}
+.cs-swatch-l {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  margin-top: 10px;
+  color: var(--color-navy-soft);
+}
+.cs-figcap {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-navy-faint);
+  margin-top: 12px;
+}
+/* Browser-frame for embedded video demos */
+.cs-browser {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: #fff;
+}
+.cs-browser-bar {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  background: #f4f1e6;
+  border-bottom: 1px solid rgb(23 36 63 / 0.1);
+}
+.cs-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.cs-browser-video {
+  aspect-ratio: 1920 / 1032;
+  background: #edeae0;
+}
+.cs-browser-video video,
+.cs-browser-video iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: 0;
 }

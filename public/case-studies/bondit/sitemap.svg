@@ -1,0 +1,71 @@
+<svg width="100%" viewBox="0 0 680 630" role="img" xmlns="http://www.w3.org/2000/svg" style="font-family: ui-sans-serif, system-ui, -apple-system, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif">
+<title>App sitemap</title>
+<desc>Onboarding branches to Log In and Register, both leading to Homepage, which branches into Tracker/journal, Post/Feed, and Profile, each with their own sub-pages.</desc>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker>
+</defs>
+<rect x="0" y="0" width="680" height="630" fill="#F7F2E6"></rect>
+
+<g fill="none" stroke="#18283F" stroke-width="1.3">
+<path d="M340 64 L340 86"></path>
+<path d="M240 86 L470 86"></path>
+<path d="M240 86 L240 108" marker-end="url(#ar)"></path>
+<path d="M470 86 L470 108" marker-end="url(#ar)"></path>
+<path d="M240 148 L240 180" marker-end="url(#ar)"></path>
+<path d="M320 200 L348 200 L348 128 L312 128" marker-end="url(#ar)"></path>
+<path d="M170 128 L142 128 L142 282 L268 282" marker-end="url(#ar)"></path>
+<path d="M470 148 L470 282 L412 282" marker-end="url(#ar)"></path>
+<path d="M340 302 L340 322"></path>
+<path d="M125 322 L545 322"></path>
+<path d="M125 322 L125 350" marker-end="url(#ar)"></path>
+<path d="M340 322 L340 350" marker-end="url(#ar)"></path>
+<path d="M545 322 L545 350" marker-end="url(#ar)"></path>
+<path d="M125 390 L125 404 L55 404 L55 512"></path>
+<path d="M55 444 L68 444" marker-end="url(#ar)"></path>
+<path d="M55 512 L68 512" marker-end="url(#ar)"></path>
+<path d="M340 390 L340 404 L270 404 L270 580"></path>
+<path d="M270 444 L283 444" marker-end="url(#ar)"></path>
+<path d="M270 512 L283 512" marker-end="url(#ar)"></path>
+<path d="M270 580 L283 580" marker-end="url(#ar)"></path>
+<path d="M545 390 L545 404 L625 404 L625 512"></path>
+<path d="M625 444 L612 444" marker-end="url(#ar)"></path>
+<path d="M625 512 L612 512" marker-end="url(#ar)"></path>
+</g>
+
+<g font-size="14" font-weight="500">
+<rect x="265" y="24" width="150" height="40" rx="10" fill="#DC6843"></rect>
+<text x="340" y="44" text-anchor="middle" dominant-baseline="central" fill="#FBF6EA">Onboarding</text>
+<rect x="170" y="108" width="140" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="240" y="128" text-anchor="middle" dominant-baseline="central" fill="#18283F">Log in</text>
+<rect x="400" y="108" width="140" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="470" y="128" text-anchor="middle" dominant-baseline="central" fill="#18283F">Register</text>
+<rect x="160" y="180" width="160" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="240" y="200" text-anchor="middle" dominant-baseline="central" fill="#18283F">Forgot password</text>
+<rect x="270" y="262" width="140" height="40" rx="10" fill="#DC6843"></rect>
+<text x="340" y="282" text-anchor="middle" dominant-baseline="central" fill="#FBF6EA">Homepage</text>
+
+<rect x="45" y="350" width="160" height="40" rx="10" fill="#18283F"></rect>
+<text x="125" y="370" text-anchor="middle" dominant-baseline="central" fill="#FBF6EA">Tracker / journal</text>
+<rect x="260" y="350" width="160" height="40" rx="10" fill="#18283F"></rect>
+<text x="340" y="370" text-anchor="middle" dominant-baseline="central" fill="#FBF6EA">Post / feed</text>
+<rect x="465" y="350" width="160" height="40" rx="10" fill="#18283F"></rect>
+<text x="545" y="370" text-anchor="middle" dominant-baseline="central" fill="#FBF6EA">Profile</text>
+
+<rect x="70" y="424" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="145" y="444" text-anchor="middle" dominant-baseline="central" fill="#18283F">Habit stats</text>
+<rect x="70" y="492" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="145" y="512" text-anchor="middle" dominant-baseline="central" fill="#18283F">Journal</text>
+
+<rect x="285" y="424" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="360" y="444" text-anchor="middle" dominant-baseline="central" fill="#18283F">Group chats</text>
+<rect x="285" y="492" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="360" y="512" text-anchor="middle" dominant-baseline="central" fill="#18283F">Search</text>
+<rect x="285" y="560" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="360" y="580" text-anchor="middle" dominant-baseline="central" fill="#18283F">Community page</text>
+
+<rect x="460" y="424" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="535" y="444" text-anchor="middle" dominant-baseline="central" fill="#18283F">Settings</text>
+<rect x="460" y="492" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#18283F" stroke-width="1.3"></rect>
+<text x="535" y="512" text-anchor="middle" dominant-baseline="central" fill="#18283F">Edit</text>
+</g>
+</svg>

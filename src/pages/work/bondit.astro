@@ -1,0 +1,289 @@
+---
+import CaseStudyBase from "../../layouts/CaseStudyBase.astro";
+const B = "/case-studies/bondit";
+---
+
+<CaseStudyBase
+  title="Bondit — Case Study | Myles Lane"
+  description="Bondit: a habit-tracking app that turns self-improvement into something you do with your friends. UX research, IA, and UI design case study."
+  label="Bondit case study"
+>
+  <!-- HERO -->
+  <section class="cs-wrap" style="padding:72px 40px 0;">
+    <div style="display:flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent);margin-bottom:24px;">
+      <span style="width:9px;height:9px;border-radius:50%;background:#E8743B;display:inline-block;"></span>Case Study — Mobile App
+    </div>
+    <h1 style="font-family:var(--font-display);font-weight:700;font-size:clamp(48px,8vw,104px);line-height:.94;letter-spacing:-.035em;margin:0 0 20px;">bondit</h1>
+    <p style="font-size:22px;line-height:1.5;color:var(--color-navy-strong);max-width:48ch;margin:0 0 40px;font-weight:500;">Strengthen bonds through sharing habits — a habit-tracking app that turns self-improvement into something you do <em>with</em> your friends.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:48px;padding:26px 0 0;border-top:1px solid rgb(23 36 63 / .16);">
+      <div><div class="cs-meta-k">Timeline</div><div class="cs-meta-v">4 months</div></div>
+      <div><div class="cs-meta-k">Role</div><div class="cs-meta-v">UX &amp; UI Designer · Researcher</div></div>
+      <div><div class="cs-meta-k">Tools</div><div class="cs-meta-v">Figma · Miro</div></div>
+      <div><div class="cs-meta-k">Focus</div><div class="cs-meta-v">Habits · Social · Journaling</div></div>
+    </div>
+  </section>
+
+  <!-- HERO VISUAL -->
+  <section class="cs-wrap" style="padding:48px 40px 88px;">
+    <div style="border-radius:24px;background:radial-gradient(120% 120% at 50% 0%,#E78457,#D9663B);overflow:hidden;display:flex;justify-content:center;align-items:center;padding:28px clamp(20px,4vw,52px);">
+      <img src={`${B}/hero-phones.png`} alt="Bondit app — three phone screens" style="width:min(78%,640px);display:block;filter:drop-shadow(0 24px 40px rgba(23,36,63,.34));" />
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-grid-overview">
+      <div>
+        <div class="cs-eyebrow" style="margin-bottom:10px;">(01) — Overview</div>
+        <div style="font-family:var(--font-display);font-weight:600;font-size:24px;letter-spacing:-.02em;">The opportunity</div>
+      </div>
+      <p style="font-size:20px;line-height:1.62;color:var(--color-navy);margin:0;max-width:62ch;">Self-improvement and habit formation are increasingly popular among young people — but staying consistent is hard, and most people only have themselves for motivation. I designed a habit-tracking app that uses social interactivity to make habit-building collaborative and genuinely enjoyable. By turning habits into shared goals with friends, the process becomes something to look forward to rather than a chore.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">(02) — The problem</div>
+    <h2 class="cs-h2" style="margin:0 0 32px;max-width:20ch;">Going it alone rarely sticks</h2>
+    <div class="cs-problem-2">
+      <p style="font-size:19px;line-height:1.6;color:var(--color-navy);margin:0;">Young adults trying to self-improve and form new habits struggle to stay consistent and hold themselves accountable when they’re the only source of motivation. Without connection or stakes, momentum fades fast — and most habit apps do nothing to fix it.</p>
+      <div style="background:var(--color-navy);color:var(--color-cream);border-radius:18px;padding:36px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:72px;line-height:1;color:#E78457;">58%</div>
+        <div style="font-size:15px;line-height:1.5;margin-top:12px;color:rgb(242 238 223 / .82);">of young adults reported a lack of meaning or purpose in their lives — impacting their ability to stay consistent with goals. <span style="color:rgb(242 238 223 / .5);">(Harvard GSE, 2023)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION INTRO -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 24px;">
+    <div class="cs-eyebrow">(03) — The solution</div>
+    <h2 class="cs-h2" style="margin:0 0 16px;max-width:18ch;">Leveraging social connection</h2>
+    <p style="font-size:18px;line-height:1.6;color:var(--color-navy-strong);margin:0;max-width:60ch;">Bondit helps users build healthy habits with friends by creating “bonds” — groups around a shared habit where friends snap a daily photo to keep the streak alive. Accountability that feels like staying in touch, not a chore.</p>
+  </section>
+
+  <!-- FEATURE 1 -->
+  <section class="cs-wrap" style="padding:40px 40px 0;">
+    <div class="cs-grid-2">
+      <div>
+        <div class="cs-eyebrow" style="margin-bottom:10px;letter-spacing:.14em;">Feature 01</div>
+        <h3 class="cs-h3" style="font-size:28px;margin:0 0 14px;">Strengthen bonds with shared habits</h3>
+        <p style="font-size:16.5px;line-height:1.6;color:var(--color-navy-strong);margin:0;">The Bonds page is where you and friends build lasting habits together — create groups, set shared goals, and track progress by snapping photos to keep streaks alive. Personal and group streak stats sit up top for motivation, with friends, bond groups, and galleries of captured moments below.</p>
+      </div>
+      <div style="border-radius:22px;padding:28px 24px;background:radial-gradient(120% 100% at 50% 0%,#E78457,#D9663B);display:flex;justify-content:center;">
+        <img src={`${B}/social.png`} alt="Bondit profile and feed screens" class="cs-tile-img" style="filter:drop-shadow(0 22px 44px rgba(23,36,63,.34));" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 2 (image left) -->
+  <section class="cs-wrap" style="padding:64px 40px 0;">
+    <div class="cs-grid-2 cs-feature-rev">
+      <div class="cs-feature-media" style="border-radius:22px;padding:28px 24px;background:radial-gradient(120% 100% at 50% 0%,#22345B,#17243F);display:flex;justify-content:center;">
+        <img src={`${B}/journal.png`} alt="Bondit New Entry and Journal screens" class="cs-tile-img" style="filter:drop-shadow(0 22px 44px rgba(0,0,0,.34));" />
+      </div>
+      <div class="cs-feature-copy">
+        <div class="cs-eyebrow" style="margin-bottom:10px;letter-spacing:.14em;">Feature 02</div>
+        <h3 class="cs-h3" style="font-size:28px;margin:0 0 14px;">Journaling for flexible progress</h3>
+        <p style="font-size:16.5px;line-height:1.6;color:var(--color-navy-strong);margin:0;">Daily habit tracking isn’t the only way to measure progress — user interviews showed many people journal alongside or instead of tracking. Bondit lets you write, tag, and filter journal entries, then share them with friends or keep them private.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 3 -->
+  <section class="cs-wrap" style="padding:64px 40px 80px;">
+    <div class="cs-grid-2">
+      <div>
+        <div class="cs-eyebrow" style="margin-bottom:10px;letter-spacing:.14em;">Feature 03</div>
+        <h3 class="cs-h3" style="font-size:28px;margin:0 0 14px;">Stay connected with your community</h3>
+        <p style="font-size:16.5px;line-height:1.6;color:var(--color-navy-strong);margin:0;">A Home feed brings friends’ bond posts and journal entries together, where you can like and comment like any social app. The Profile page lets you personalize your space — picture, username, bio, follower count — with a Shared Bonds section so friends can celebrate your progress.</p>
+      </div>
+      <div style="border-radius:22px;padding:28px 24px;background:radial-gradient(120% 100% at 50% 0%,#E78457,#D9663B);display:flex;justify-content:center;">
+        <img src={`${B}/community.png`} alt="Bondit Bond detail and Bonds screens" class="cs-tile-img" style="filter:drop-shadow(0 22px 44px rgba(23,36,63,.34));" />
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">(04) — Research</div>
+    <h2 class="cs-h2" style="margin:0 0 40px;">Understanding the problem space</h2>
+
+    <div class="cs-grid-3" style="margin-bottom:56px;">
+      <div class="cs-info-card">
+        <div style="font-weight:700;font-size:17px;margin-bottom:8px;">Technical analysis</div>
+        <p class="cs-info-p">Assessed existing habit-tracking apps to find their weak points — especially around the social aspects — and where Bondit could improve.</p>
+      </div>
+      <div class="cs-info-card">
+        <div style="font-weight:700;font-size:17px;margin-bottom:8px;">Secondary research</div>
+        <p class="cs-info-p">Reviewed scientific evidence for social motivation in building and maintaining habits — backing the hypothesis that social interactivity drives consistency.</p>
+      </div>
+      <div class="cs-info-card">
+        <div style="font-weight:700;font-size:17px;margin-bottom:8px;">Primary research</div>
+        <p class="cs-info-p">One-on-one interviews with five participants across different areas of habit formation, to understand real motivations, challenges, and strategies.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--color-navy);color:var(--color-cream);border-radius:20px;padding:clamp(28px,4vw,48px);margin-bottom:48px;display:flex;flex-wrap:wrap;gap:40px;align-items:center;">
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:80px;line-height:1;color:#E78457;">5</div>
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgb(242 238 223 / .6);margin-top:6px;">interviews</div>
+      </div>
+      <div style="flex:1;min-width:260px;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.4vw,28px);line-height:1.25;letter-spacing:-.01em;">“Social motivation plays a key role in habit formation and consistency.”</div>
+    </div>
+
+    <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-navy-subtle);margin-bottom:20px;">Key insights</div>
+    <div class="cs-grid-3">
+      <div>
+        <div class="cs-insight-n">01</div>
+        <div style="font-weight:700;font-size:17px;margin-bottom:8px;">Social accountability boosts consistency</div>
+        <p class="cs-info-p">Involving friends or groups created a sense of obligation and motivation — from rock climbing together to small spiritual-practice groups.</p>
+      </div>
+      <div>
+        <div class="cs-insight-n">02</div>
+        <div style="font-weight:700;font-size:17px;margin-bottom:8px;">Journaling is essential</div>
+        <p class="cs-info-p">Most participants used casual journaling as their primary tracking method — a surprise that reshaped the app away from pure habit tracking.</p>
+      </div>
+      <div>
+        <div class="cs-insight-n">03</div>
+        <div style="font-weight:700;font-size:17px;margin-bottom:8px;">It has to be intuitive &amp; fun</div>
+        <p class="cs-info-p">Past apps felt unintuitive and unengaging. Users wanted something familiar — closer to BeReal, Snapchat, Instagram, and TikTok.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USER NEEDS -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">User needs</div>
+    <h2 class="cs-h2" style="font-size:clamp(26px,3.2vw,36px);margin:0 0 36px;max-width:24ch;">What the research told me to build</h2>
+    <div class="cs-grid-3" style="gap:28px;">
+      <div style="border-top:3px solid var(--color-accent);padding-top:18px;">
+        <div style="font-weight:700;font-size:19px;margin-bottom:8px;">Journaling</div>
+        <p class="cs-info-p" style="font-size:15px;">Users want journaling as their preferred way to keep track — so it had to be a first-class part of the design.</p>
+      </div>
+      <div style="border-top:3px solid var(--color-navy);padding-top:18px;">
+        <div style="font-weight:700;font-size:19px;margin-bottom:8px;">Social integration</div>
+        <p class="cs-info-p" style="font-size:15px;">Social features need to run throughout the app to make habit-forming more enjoyable — not bolted on.</p>
+      </div>
+      <div style="border-top:3px solid var(--color-accent);padding-top:18px;">
+        <div style="font-weight:700;font-size:19px;margin-bottom:8px;">Familiarity</div>
+        <p class="cs-info-p" style="font-size:15px;">A familiar UI that’s easy to pick up — echoing the apps users already reach for every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">(05) — Process</div>
+    <h2 class="cs-h2" style="margin:0 0 28px;max-width:20ch;">Flows, trees, and ruthless editing</h2>
+
+    <div class="cs-grid-2" style="align-items:start;gap:40px;margin-bottom:36px;">
+      <div>
+        <h3 class="cs-h3" style="font-size:21px;margin:0 0 10px;">User flows &amp; IA</h3>
+        <p style="font-size:16px;line-height:1.58;color:var(--color-navy-strong);margin:0;">I mapped out the app’s flows and page labeling, then ran a remote-moderated tree-test study to validate the information architecture before moving into wireframes.</p>
+      </div>
+      <div>
+        <h3 class="cs-h3" style="font-size:21px;margin:0 0 10px;">Wireframe &amp; prototype</h3>
+        <p style="font-size:16px;line-height:1.58;color:var(--color-navy-strong);margin:0;">I tested what was essential and cut the rest. A remote usability study confirmed my worry — some pages felt overwhelming with too many on-screen elements — so I revised toward less clutter and clearer navigation.</p>
+      </div>
+    </div>
+
+    <div style="border-radius:18px;padding:clamp(20px,3vw,38px);background:#ECE7D6;border:1px solid rgb(23 36 63 / .1);margin-bottom:24px;">
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);margin-bottom:20px;">Information architecture · tree-tested</div>
+      <div style="border-radius:12px;overflow:hidden;border:1px solid rgb(23 36 63 / .1);background:#F7F2E6;">
+        <img src={`${B}/sitemap.svg`} alt="App sitemap: Onboarding branches to Log In and Register, leading to Homepage, which branches into Tracker/journal, Post/feed, and Profile" style="display:block;width:100%;height:auto;" />
+      </div>
+    </div>
+
+    <div style="border-radius:18px;padding:clamp(20px,3vw,38px);background:#ECE7D6;border:1px solid rgb(23 36 63 / .1);">
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);margin-bottom:18px;">Wireframe → final · Profile screen</div>
+      <p style="font-size:16px;line-height:1.6;color:var(--color-navy-strong);margin:0 0 26px;max-width:80ch;">Early designs centered on personal habit tracking, with a dedicated Habits tab for individual progress. Through research and testing, the concept shifted: habits alone are personal, but shared habits become bonds. Renaming the tab and reframing the core action around Bonds reflected that the app's real value is what happens between people, not just within them.</p>
+      <div class="cs-grid-2" style="align-items:start;gap:24px;">
+        <figure style="margin:0;">
+          <div style="border-radius:12px;overflow:hidden;border:1px solid rgb(23 36 63 / .12);background:#fff;">
+            <img src={`${B}/wireframe-profile.png`} alt="Wireframe of the Profile screen" style="display:block;width:100%;height:auto;" />
+          </div>
+          <figcaption class="cs-figcap">Wireframe — Habits tab, list-based profile</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border-radius:12px;overflow:hidden;border:1px solid rgb(23 36 63 / .12);background:#fff;">
+            <img src={`${B}/final-profile.png`} alt="Final hi-fi Profile screen" style="display:block;width:100%;height:auto;" />
+          </div>
+          <figcaption class="cs-figcap">Final — Bonds tab, Shared Bonds front and center</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN SYSTEM -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">(06) — Design system</div>
+    <h2 class="cs-h2" style="margin:0 0 24px;max-width:20ch;">Warm, inviting, and consistent</h2>
+    <p style="font-size:18px;line-height:1.62;color:var(--color-navy-strong);margin:0 0 32px;max-width:62ch;">I distilled my research into the core insights that shaped Bondit’s look. The palette — warm neutrals through energetic orange and calming blue — was chosen to feel inviting, making habit tracking personal and socially engaging.</p>
+    <div class="cs-grid-4">
+      <div><div style="height:120px;border-radius:14px;background:#EFE7D7;border:1px solid rgb(23 36 63 / .12);"></div><div class="cs-swatch-l">Warm neutral</div></div>
+      <div><div style="height:120px;border-radius:14px;background:#E8743B;"></div><div class="cs-swatch-l">Energetic orange</div></div>
+      <div><div style="height:120px;border-radius:14px;background:#426771;"></div><div class="cs-swatch-l">Calming blue</div></div>
+      <div><div style="height:120px;border-radius:14px;background:#22252B;"></div><div class="cs-swatch-l">Ink</div></div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">(07) — Hi-fidelity &amp; final</div>
+    <h2 class="cs-h2" style="margin:0 0 24px;">Simplify, refine, focus</h2>
+    <p style="font-size:18px;line-height:1.62;color:var(--color-navy-strong);margin:0 0 44px;max-width:64ch;">Using usability feedback, I simplified the app around its core purpose — connecting friends to form habits and journal — cutting the data-heavy pages the target audience didn’t value. I refined the UI to balance familiarity with a look of its own, keeping it intuitive and visually appealing.</p>
+    <div class="cs-grid-3" style="gap:28px;">
+      <div style="background:#D9663B;color:#FBF7EE;border-radius:18px;padding:32px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:54px;line-height:1;">100%</div>
+        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(251 247 238 / .9);">task completion rate in the final usability test.</div>
+      </div>
+      <div style="background:var(--color-navy);color:var(--color-cream);border-radius:18px;padding:32px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:54px;line-height:1;color:#E78457;">60%</div>
+        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(242 238 223 / .85);">improvement in usability ratings after the redesign.</div>
+      </div>
+      <div style="background:#2FA39A;color:#FBFDFC;border-radius:18px;padding:32px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:54px;line-height:1;">4–5<span style="font-size:26px;">/5</span></div>
+        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(251 253 252 / .92);">intuitiveness rating from participants, consistently.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOTYPE -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
+    <div class="cs-eyebrow">Try it</div>
+    <h2 class="cs-h2" style="margin:0 0 28px;">Play with the prototype</h2>
+    <div style="border-radius:20px;padding:clamp(16px,3vw,36px);background:radial-gradient(120% 100% at 50% 0%,#22345B,#17243F);">
+      <div style="border-radius:12px;overflow:hidden;border:1px solid rgb(255 255 255 / .1);background:#fff;">
+        <iframe
+          src="https://embed.figma.com/proto/drr8YwLSEkAdl5cuosmqdm/Bondit?page-id=239%3A2&node-id=241-3388&viewport=11200%2C4443%2C0.45&scaling=scale-down&content-scaling=fixed&starting-point-node-id=241%3A3388&hotspot-hints=0&embed-host=share"
+          title="Bondit Figma prototype"
+          allowfullscreen
+          style="width:100%;height:640px;border:0;display:block;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKEAWAYS -->
+  <section class="cs-wrap cs-divide" style="padding:48px 40px 88px;">
+    <div class="cs-eyebrow">(08) — Take-aways</div>
+    <h2 class="cs-h2" style="margin:0 0 40px;">What I’m taking forward</h2>
+    <div class="cs-grid-3" style="gap:36px;">
+      <div>
+        <div style="height:3px;width:40px;background:var(--color-accent);margin-bottom:18px;"></div>
+        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Test. Test. Test.</div>
+        <p class="cs-info-p" style="font-size:15px;">Testing surfaced insights at every stage — uncovering real needs, catching wrong assumptions, and keeping the product user-centered. It saves time and money in the end.</p>
+      </div>
+      <div>
+        <div style="height:3px;width:40px;background:var(--color-navy);margin-bottom:18px;"></div>
+        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Iron it out in the wireframe</div>
+        <p class="cs-info-p" style="font-size:15px;">A well-refined wireframe smooths the jump to hi-fi, cutting major revisions later and freeing time to build a cohesive design system — and to test thoroughly.</p>
+      </div>
+      <div>
+        <div style="height:3px;width:40px;background:#2FA39A;margin-bottom:18px;"></div>
+        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Familiarity wins</div>
+        <p class="cs-info-p" style="font-size:15px;">Leaning on patterns from the apps users already love made Bondit feel instantly intuitive — novelty only helps once the basics feel familiar.</p>
+      </div>
+    </div>
+  </section>
+</CaseStudyBase>

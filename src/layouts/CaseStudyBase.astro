@@ -5,17 +5,13 @@ import Marquee from "../components/Marquee.astro";
 interface Props {
   title?: string;
   description?: string;
-  bodyClass?: string;
-  marquee?: boolean;
-  footerCta?: boolean;
+  label: string;
 }
 
 const {
-  title = "Myles Lane — Product Designer",
-  description = "Product Designer at Goldman Sachs focused on making complex tools feel simple.",
-  bodyClass = "",
-  marquee = false,
-  footerCta = true,
+  title = "Myles Lane — Case Study",
+  description = "A product design case study by Myles Lane.",
+  label,
 } = Astro.props;
 ---
 
@@ -27,8 +23,7 @@ const {
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://myleslane.com" />
+    <meta property="og:type" content="article" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,48 +33,48 @@ const {
     />
     <title>{title}</title>
   </head>
-  <body class={`min-h-dvh ${bodyClass}`}>
-    {marquee && <Marquee />}
+  <body class="min-h-dvh">
+    <Marquee />
 
     <!-- NAV -->
-    <div class="site-nav">
-      <div class="site-nav-inner">
-        <a href="/" class="site-logo">ML</a>
-        <nav class="site-links">
-          <a href="/#work">Work</a>
-          <a href="/#about">About</a>
-          <a href="/resume.pdf" class="nav-secondary" target="_blank" rel="noopener">Résumé</a>
-          <a href="https://www.linkedin.com/in/myleslane00" class="nav-secondary" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:myleslane00@gmail.com" class="site-email-btn">Email</a>
-        </nav>
+    <div class="cs-nav">
+      <div class="cs-nav-inner">
+        <div class="cs-crumb">
+          <a href="/" class="cs-logo">ML</a>
+          <span class="cs-slash">/</span>
+          <span class="cs-label">{label}</span>
+        </div>
+        <div class="cs-nav-actions">
+          <a href="/#work" class="cs-allwork">← All work</a>
+          <a href="mailto:myleslane00@gmail.com" class="cs-email-btn">Email</a>
+        </div>
       </div>
     </div>
 
-    <main class="site-main">
+    <main>
       <slot />
     </main>
 
-    {footerCta && (
-      <footer class="site-footer">
-        <div class="site-footer-inner">
-          <div class="footer-eyebrow">Get in touch</div>
-          <h2 class="footer-heading">Let’s make something good together.</h2>
-          <a href="mailto:myleslane00@gmail.com" class="footer-cta-btn">myleslane00@gmail.com →</a>
-          <div class="footer-bottom">
-            <div class="footer-bottom-links">
-              <a href="/#work">Work</a>
-              <a href="/#about">About</a>
-              <a href="/resume.pdf" target="_blank" rel="noopener">Résumé</a>
-              <a href="https://www.linkedin.com/in/myleslane00" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-            <div class="footer-copyright">© {new Date().getFullYear()} Myles Lane</div>
+    <!-- FOOTER -->
+    <footer class="cs-footer">
+      <div class="cs-footer-inner">
+        <a href="/#work" class="cs-back">← Back to all work</a>
+        <h2 class="cs-footer-heading">Want the full walkthrough? Let’s talk.</h2>
+        <a href="mailto:myleslane00@gmail.com" class="cs-footer-btn">myleslane00@gmail.com →</a>
+        <div class="cs-footer-bottom">
+          <div class="cs-footer-links">
+            <a href="/#work">Projects</a>
+            <a href="/#about">About</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener">Résumé</a>
+            <a href="https://www.linkedin.com/in/myleslane00" target="_blank" rel="noopener">LinkedIn</a>
           </div>
+          <div class="cs-copyright">© {new Date().getFullYear()} Myles Lane</div>
         </div>
-      </footer>
-    )}
+      </div>
+    </footer>
 
     <style>
-      .site-nav {
+      .cs-nav {
         position: sticky;
         top: 0;
         z-index: 20;
@@ -87,7 +82,7 @@ const {
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--color-navy-rule);
       }
-      .site-nav-inner {
+      .cs-nav-inner {
         max-width: 1080px;
         margin: 0 auto;
         padding: 0 40px;
@@ -96,69 +91,87 @@ const {
         align-items: center;
         justify-content: space-between;
       }
-      .site-logo {
+      .cs-crumb {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+      .cs-logo {
         font-family: var(--font-display);
         font-weight: 800;
         font-size: 24px;
         letter-spacing: -0.02em;
         color: var(--color-navy);
       }
-      .site-links {
+      .cs-slash {
+        color: rgb(23 36 63 / 0.3);
+      }
+      .cs-label {
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        letter-spacing: 0.04em;
+        color: var(--color-navy-faint);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .cs-nav-actions {
         display: flex;
         align-items: center;
-        gap: 30px;
+        gap: 26px;
         font-size: 15px;
         font-weight: 500;
       }
-      .site-links a {
+      .cs-allwork {
         color: var(--color-navy);
+        white-space: nowrap;
       }
-      .site-links a.site-email-btn {
+      .cs-email-btn {
         background: var(--color-navy);
         color: var(--color-cream);
         padding: 9px 16px;
         border-radius: 9px;
         font-weight: 600;
       }
-      .site-links a.site-email-btn:hover {
+      .cs-email-btn:hover {
         background: var(--color-accent);
         color: var(--color-cream);
       }
 
-      .site-main {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 40px;
-      }
-
-      .site-footer {
+      .cs-footer {
         width: 100%;
         background: var(--color-navy);
         color: var(--color-cream);
       }
-      .site-footer-inner {
+      .cs-footer-inner {
         max-width: 1080px;
         margin: 0 auto;
-        padding: 80px 40px 36px;
+        padding: 72px 40px 36px;
       }
-      .footer-eyebrow {
+      .cs-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         font-family: var(--font-mono);
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--color-accent);
-        margin-bottom: 18px;
+        font-size: 12.5px;
+        letter-spacing: 0.06em;
+        color: rgb(242 238 223 / 0.7);
+        margin-bottom: 26px;
       }
-      .footer-heading {
+      .cs-back:hover {
+        color: var(--color-cream);
+      }
+      .cs-footer-heading {
         font-family: var(--font-display);
         font-weight: 700;
-        font-size: clamp(32px, 4.6vw, 56px);
+        font-size: clamp(30px, 4.4vw, 52px);
         letter-spacing: -0.025em;
-        line-height: 1.04;
-        margin: 0 0 30px;
-        max-width: 16ch;
+        line-height: 1.05;
+        margin: 0 0 28px;
+        max-width: 18ch;
       }
-      .footer-cta-btn {
+      .cs-footer-btn {
         display: inline-block;
         background: var(--color-cream);
         color: var(--color-navy);
@@ -167,50 +180,45 @@ const {
         font-weight: 600;
         font-size: 16px;
       }
-      .footer-cta-btn:hover {
+      .cs-footer-btn:hover {
         background: var(--color-accent);
         color: var(--color-cream);
       }
-      .footer-bottom {
+      .cs-footer-bottom {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 18px;
-        margin-top: 64px;
+        margin-top: 60px;
         padding-top: 24px;
         border-top: 1px solid rgb(242 238 223 / 0.18);
         font-size: 14px;
       }
-      .footer-bottom-links {
+      .cs-footer-links {
         display: flex;
         gap: 26px;
       }
-      .footer-bottom-links a {
+      .cs-footer-links a {
         color: rgb(242 238 223 / 0.78);
       }
-      .footer-bottom-links a:hover {
+      .cs-footer-links a:hover {
         color: var(--color-cream);
       }
-      .footer-copyright {
+      .cs-copyright {
         font-family: var(--font-mono);
         font-size: 12.5px;
         color: rgb(242 238 223 / 0.5);
       }
 
-      @media (max-width: 640px) {
-        .site-nav-inner,
-        .site-main,
-        .site-footer-inner {
+      @media (max-width: 600px) {
+        .cs-nav-inner,
+        .cs-footer-inner {
           padding-left: 22px;
           padding-right: 22px;
         }
-        .site-links {
-          gap: 18px;
-          font-size: 15px;
-        }
-        .nav-secondary {
-          display: none;
+        .cs-nav-actions {
+          gap: 16px;
         }
       }
     </style>
