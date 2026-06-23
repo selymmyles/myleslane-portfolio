@@ -78,6 +78,16 @@ const {
       </footer>
     )}
 
+    <script>
+      // Reliable muted autoplay (the `muted` attribute alone is often ignored).
+      // Respect reduced-motion: leave the video paused on its first frame.
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.querySelectorAll("video[autoplay]").forEach((v) => {
+        v.muted = true;
+        if (!reduceMotion) v.play().catch(() => {});
+      });
+    </script>
+
     <style>
       .site-nav {
         position: sticky;

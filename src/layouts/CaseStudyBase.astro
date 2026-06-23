@@ -73,6 +73,15 @@ const {
       </div>
     </footer>
 
+    <script>
+      // Reliable muted autoplay for the case-study demo videos.
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.querySelectorAll("video[autoplay]").forEach((v) => {
+        v.muted = true;
+        if (!reduceMotion) v.play().catch(() => {});
+      });
+    </script>
+
     <style>
       .cs-nav {
         position: sticky;

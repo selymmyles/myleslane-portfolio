@@ -39,6 +39,11 @@ const line = phrases.join("  ✦  ") + "  ✦  ";
     font-size: 13px;
     letter-spacing: 0.04em;
     animation: marquee-scroll 60s linear infinite;
+    /* Promote to its own GPU layer so the scroll stays smooth and isn't
+       tied to main-thread repaints. */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   @keyframes marquee-scroll {
     from {
