@@ -17,6 +17,10 @@ const {
   marquee = false,
   footerCta = true,
 } = Astro.props;
+
+// Cloudflare Web Analytics token — set PUBLIC_CF_BEACON_TOKEN in the Cloudflare
+// project's environment variables to switch analytics on (no-op until then).
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
 
 <!doctype html>
@@ -87,6 +91,16 @@ const {
         if (!reduceMotion) v.play().catch(() => {});
       });
     </script>
+
+    {/* Cloudflare Web Analytics — privacy-first (no cookies, no consent banner) */}
+    {cfBeaconToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${cfBeaconToken}"}`}
+      ></script>
+    )}
 
     <style>
       .site-nav {
