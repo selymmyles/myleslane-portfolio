@@ -25,9 +25,28 @@ const B = "/case-studies/bondit";
   </section>
 
   <!-- HERO VISUAL -->
-  <section class="cs-wrap" style="padding:48px 40px 88px;">
+  <section class="cs-wrap" style="padding:48px 40px 40px;">
     <div style="border-radius:24px;background:radial-gradient(120% 120% at 50% 0%,#E78457,#D9663B);overflow:hidden;display:flex;justify-content:center;align-items:center;padding:28px clamp(20px,4vw,52px);">
       <img src={`${B}/hero-phones.png`} alt="Bondit app — three phone screens" style="width:min(78%,640px);display:block;filter:drop-shadow(0 24px 40px rgba(23,36,63,.34));" />
+    </div>
+  </section>
+
+  <!-- OUTCOME — results up front -->
+  <section class="cs-wrap" style="padding:0 40px 80px;">
+    <div class="cs-eyebrow" style="margin-bottom:18px;">Outcome</div>
+    <div style="display:flex;flex-wrap:wrap;gap:28px 56px;">
+      <div style="min-width:150px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(38px,4.6vw,52px);line-height:1;color:var(--color-accent);">100%</div>
+        <div style="font-size:14px;line-height:1.45;color:var(--color-navy-strong);margin-top:8px;max-width:26ch;">task completion in final moderated usability testing</div>
+      </div>
+      <div style="min-width:150px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(38px,4.6vw,52px);line-height:1;color:var(--color-navy);">60%</div>
+        <div style="font-size:14px;line-height:1.45;color:var(--color-navy-strong);margin-top:8px;max-width:26ch;">lift in usability ratings, pre- vs post-redesign</div>
+      </div>
+      <div style="min-width:150px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(38px,4.6vw,52px);line-height:1;color:var(--color-accent);">4–5<span style="font-size:.5em;font-weight:700;">/5</span></div>
+        <div style="font-size:14px;line-height:1.45;color:var(--color-navy-strong);margin-top:8px;max-width:26ch;">intuitiveness from participants, consistently</div>
+      </div>
     </div>
   </section>
 
@@ -60,6 +79,14 @@ const B = "/case-studies/bondit";
     <div class="cs-eyebrow">(03) — The solution</div>
     <h2 class="cs-h2" style="margin:0 0 16px;max-width:18ch;">Leveraging social connection</h2>
     <p style="font-size:18px;line-height:1.6;color:var(--color-navy-strong);margin:0;max-width:60ch;">Bondit helps users build healthy habits with friends by creating “bonds”, groups around a shared habit where friends snap a daily photo to keep the streak alive. Accountability that feels like staying in touch, not a chore.</p>
+  </section>
+
+  <!-- KEY DECISION -->
+  <section class="cs-wrap" style="padding:28px 40px 0;">
+    <div style="border-left:3px solid var(--color-accent);padding:4px 0 4px 26px;max-width:64ch;">
+      <div class="cs-eyebrow" style="margin-bottom:12px;">The pivotal decision</div>
+      <p style="font-family:var(--font-display);font-weight:600;font-size:clamp(21px,2.6vw,28px);line-height:1.32;letter-spacing:-.012em;color:var(--color-navy);margin:0;">The biggest unlock wasn’t a screen — it was a word. Research kept pointing to the same thing, so I renamed <em style="font-style:italic;">Habits</em> to <em style="font-style:italic;color:var(--color-accent);">Bonds</em> and rebuilt the app around what happens <em style="font-style:italic;">between</em> people, not just within them.</p>
+    </div>
   </section>
 
   <!-- FEATURE 1 -->
@@ -236,11 +263,11 @@ const B = "/case-studies/bondit";
     <div class="cs-grid-3" style="gap:28px;">
       <div style="background:var(--color-accent);color:var(--color-cream);border-radius:18px;padding:32px;">
         <div style="font-family:var(--font-display);font-weight:800;font-size:54px;line-height:1;">100%</div>
-        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(242 238 223 / .9);">task completion rate in the final usability test.</div>
+        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(242 238 223 / .9);">task completion in final moderated usability testing.</div>
       </div>
       <div style="background:var(--color-navy);color:var(--color-cream);border-radius:18px;padding:32px;">
         <div style="font-family:var(--font-display);font-weight:800;font-size:54px;line-height:1;color:var(--color-accent-warm);">60%</div>
-        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(242 238 223 / .85);">improvement in usability ratings after the redesign.</div>
+        <div style="font-size:15px;line-height:1.45;margin-top:10px;color:rgb(242 238 223 / .85);">lift in usability ratings, pre- vs post-redesign.</div>
       </div>
       <div style="background:var(--color-accent);color:var(--color-cream);border-radius:18px;padding:32px;">
         <div style="font-family:var(--font-display);font-weight:800;font-size:54px;line-height:1;">4–5<span style="font-size:26px;">/5</span></div>
@@ -273,18 +300,18 @@ const B = "/case-studies/bondit";
     <div class="cs-grid-3" style="gap:36px;">
       <div>
         <div style="height:3px;width:40px;background:var(--color-accent);margin-bottom:18px;"></div>
-        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Test. Test. Test.</div>
-        <p class="cs-info-p" style="font-size:15px;">Testing surfaced insights at every stage, uncovering real needs, catching wrong assumptions, and keeping the product user-centered. It saves time and money in the end.</p>
+        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Change the concept, not just the canvas</div>
+        <p class="cs-info-p" style="font-size:15px;">My biggest improvement wasn’t a screen — it was renaming Habits to Bonds. When testing keeps pointing somewhere, the brave move is to re-frame the core idea, not just polish the one you started with.</p>
       </div>
       <div>
         <div style="height:3px;width:40px;background:var(--color-navy);margin-bottom:18px;"></div>
-        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Iron it out in the wireframe</div>
-        <p class="cs-info-p" style="font-size:15px;">A well-refined wireframe smooths the jump to hi-fi, cutting major revisions later and freeing time to build a cohesive design system, and to test thoroughly.</p>
+        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Subtract for the real user</div>
+        <p class="cs-info-p" style="font-size:15px;">I cut the data-heavy stats pages. They demoed well, but my users tracked casually through journaling and didn’t want them. Designing for the actual persona meant removing features, not adding them.</p>
       </div>
       <div>
         <div style="height:3px;width:40px;background:var(--color-accent-warm);margin-bottom:18px;"></div>
-        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">Familiarity wins</div>
-        <p class="cs-info-p" style="font-size:15px;">Leaning on patterns from the apps users already love made Bondit feel instantly intuitive. Novelty only helps once the basics feel familiar.</p>
+        <div style="font-weight:700;font-size:19px;margin-bottom:10px;">What I’d test sooner</div>
+        <p class="cs-info-p" style="font-size:15px;">I validated the screens, but not the social loop itself. Next time I’d put the core accountability mechanic in front of a real friend group before refining UI — the product lives or dies on that behavior, not the pixels.</p>
       </div>
     </div>
   </section>
