@@ -19,6 +19,7 @@ const B = "/case-studies/bondit";
     <div style="display:flex;flex-wrap:wrap;gap:48px;padding:26px 0 0;border-top:1px solid rgb(23 36 63 / .16);">
       <div><div class="cs-meta-k">Timeline</div><div class="cs-meta-v">4 months</div></div>
       <div><div class="cs-meta-k">Role</div><div class="cs-meta-v">UX &amp; UI Designer · Researcher</div></div>
+      <div><div class="cs-meta-k">Team</div><div class="cs-meta-v">Solo project</div></div>
       <div><div class="cs-meta-k">Tools</div><div class="cs-meta-v">Figma · Miro</div></div>
       <div><div class="cs-meta-k">Focus</div><div class="cs-meta-v">Habits · Social · Journaling</div></div>
     </div>
@@ -246,12 +247,54 @@ const B = "/case-studies/bondit";
   <section class="cs-wrap cs-divide" style="padding:48px 40px 80px;">
     <div class="cs-eyebrow">(06) — Design system</div>
     <h2 class="cs-h2" style="margin:0 0 24px;max-width:20ch;">Warm, inviting, and consistent</h2>
-    <p style="font-size:18px;line-height:1.62;color:var(--color-navy-strong);margin:0 0 32px;max-width:62ch;">I distilled my research into the core insights that shaped Bondit’s look. The palette, warm neutrals through energetic orange and calming blue, was chosen to feel inviting, making habit tracking personal and socially engaging.</p>
-    <div class="cs-grid-4">
+    <p style="font-size:18px;line-height:1.62;color:var(--color-navy-strong);margin:0 0 36px;max-width:62ch;">I distilled my research into a small, familiar system built for daily use — an inviting palette, a clear type hierarchy, and a set of reusable components that keep every screen consistent.</p>
+
+    <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-navy-subtle);margin-bottom:16px;">Color</div>
+    <div class="cs-grid-4" style="margin-bottom:44px;">
       <div><div style="height:120px;border-radius:14px;background:#EFE7D7;border:1px solid rgb(23 36 63 / .12);"></div><div class="cs-swatch-l">Warm neutral</div></div>
       <div><div style="height:120px;border-radius:14px;background:#E8743B;"></div><div class="cs-swatch-l">Energetic orange</div></div>
       <div><div style="height:120px;border-radius:14px;background:#426771;"></div><div class="cs-swatch-l">Calming blue</div></div>
       <div><div style="height:120px;border-radius:14px;background:#22252B;"></div><div class="cs-swatch-l">Ink</div></div>
+    </div>
+
+    <div class="cs-grid-2" style="align-items:start;gap:24px;">
+      <!-- Type scale -->
+      <div style="border-radius:18px;padding:clamp(22px,3vw,34px);background:#ECE7D6;border:1px solid rgb(23 36 63 / .1);">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);margin-bottom:24px;">Type · SF Pro, weight-driven</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;color:#1e1e1e;display:flex;flex-direction:column;gap:20px;">
+          <div>
+            <div style="font-size:32px;font-weight:700;line-height:1;letter-spacing:-.01em;">68 day streak</div>
+            <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-navy-subtle);margin-top:7px;">Display · 30–40 / Bold</div>
+          </div>
+          <div>
+            <div style="font-size:18px;font-weight:600;">Shared Bonds</div>
+            <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-navy-subtle);margin-top:7px;">Heading · 18 / Semibold</div>
+          </div>
+          <div>
+            <div style="font-size:15px;font-weight:400;color:#707070;">try to avg at least 10k daily</div>
+            <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-navy-subtle);margin-top:7px;">Body · 15 / Regular</div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:500;letter-spacing:.02em;color:#817065;">Most Consistent</div>
+            <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-navy-subtle);margin-top:7px;">Label · 12 / Medium</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core components -->
+      <div style="border-radius:18px;padding:clamp(22px,3vw,34px);background:#ECE7D6;border:1px solid rgb(23 36 63 / .1);">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);margin-bottom:24px;">Core components</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
+          <span style="background:#1e1e1e;color:#fff9f2;border-radius:12px;padding:12px 22px;font-size:14px;font-weight:600;">Create bond</span>
+          <span style="background:#5b9797;color:#ffffff;border-radius:12px;padding:12px 22px;font-size:14px;font-weight:600;">Share</span>
+          <span style="background:#817065;color:#fff9f2;border-radius:8px;padding:6px 15px;font-size:12px;font-weight:500;">Introspection</span>
+          <span style="background:#fff9f2;color:#1e1e1e;border-radius:999px;padding:8px 15px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:7px;border:1px solid rgb(23 36 63 / .08);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#fc8207" stroke="#fc8207" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+            68
+          </span>
+          <span style="background:#fff9f2;border:1px solid #cfc8bd;color:#707070;border-radius:12px;padding:11px 18px;font-size:14px;">Search people</span>
+        </div>
+      </div>
     </div>
   </section>
 
