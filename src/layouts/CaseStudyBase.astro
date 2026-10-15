@@ -33,6 +33,43 @@ const {
     />
     <title>{title}</title>
   <script defer src="https://umami.mylesflix.com/portfolio-stats" data-website-id="feab3321-934d-47d9-88ea-a52d103e3554"></script>
+  <script is:inline>
+  (function () {
+    function track(name, data) {
+      try { if (window.umami) window.umami.track(name, data || {}); } catch (e) {}
+    }
+    document.addEventListener('click', function (ev) {
+      var el = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+      if (!el) return;
+      var href = el.getAttribute('href') || '';
+      var label = (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 50);
+      if (href.indexOf('mailto:') === 0) {
+        track('contact_click', { via: 'email', label: label });
+      } else if (/\.pdf($|\?)/i.test(href)) {
+        track('resume_download', { file: href.split('/').pop().split('?')[0] });
+      } else if (/^https?:/i.test(href)) {
+        try {
+          var dest = new URL(href, location.href).hostname.replace(/^www\./, '');
+          var self = location.hostname.replace(/^www\./, '');
+          if (dest && dest !== self) track('outbound_click', { destination: dest, label: label });
+        } catch (e) {}
+      }
+    }, true);
+    var fired = {}, ticking = false;
+    function onScroll() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      if (max <= 0) return;
+      var pct = Math.round(((window.scrollY || h.scrollTop) / max) * 100);
+      [25, 50, 75, 100].forEach(function (t) {
+        if (pct >= t && !fired[t]) { fired[t] = 1; track('scroll_depth', { depth: t }); }
+      });
+    }
+    document.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { onScroll(); ticking = false; }); }
+    }, { passive: true });
+  })();
+  </script>
   </head>
   <body class="min-h-dvh">
     <Marquee />
